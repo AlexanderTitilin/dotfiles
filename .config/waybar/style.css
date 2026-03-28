@@ -1,0 +1,90 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrains Mono,Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #1F1F28;
+    /* border-bottom: 2px solid rgba(100, 114, 125, 0.5); */
+    color: white;
+}
+
+tooltip {
+  background: #1F1F28;
+  font-size:20px;
+  border: 1px solid #d8a657;
+}
+tooltip label {
+  color: #d8a657;
+  font-size:20px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin-left:  10px;
+    background: transparent;
+    color: white;
+    border-bottom: 3px solid transparent;
+    font-family:JetBrains;
+}
+
+#workspaces button.active {
+    background: transparent;
+    border-bottom: 3px solid #d8a657;
+}
+
+#workspaces button:hover{
+    color : #d8a657;
+      box-shadow: inherit;
+      text-shadow: inherit;
+}
+#tags button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+#tags button.active {
+    background: transparent;
+    border-bottom: 3px solid #d8a657;
+}
+
+#mode, #clock, #battery {
+    padding: 0 10px;
+}
+
+#mode {
+    background: transparent;
+    border-bottom: 3px solid white;
+}
+
+#clock {
+    background-color: transparent;
+    color:#d8a657;
+    font-size: 16px;
+}
+#network,#language,#battery {
+    font-size: 16px;
+    color:#ddc7a1;
+}
+#language {
+    margin-left:5px;
+}
+#battery {
+    font-size: 16px;
+    color : #ddc7a1;
+}
+
+#battery.charging {
+    color: #a9b665;
+}
+
+
+
+#battery.warning {
+    color: #ea6962;
+}
