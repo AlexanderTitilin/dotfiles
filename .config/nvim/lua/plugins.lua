@@ -13,63 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 {
-    "inhesrom/remote-ssh.nvim",
-    branch = "master",
-    dependencies = {
-        "inhesrom/telescope-remote-buffer", --See https://github.com/inhesrom/telescope-remote-buffer for features
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim",
-        "neovim/nvim-lspconfig",
-        -- nvim-notify is recommended, but not necessarily required into order to get notifcations during operations - https://github.com/rcarriga/nvim-notify
-        "rcarriga/nvim-notify",
-    },
-    config = function ()
-        require('telescope-remote-buffer').setup(
-            -- Default keymaps to open telescope and search open buffers including "remote" open buffers
-            --fzf = "<leader>fz",
-            --match = "<leader>gb",
-            --oldfiles = "<leader>rb"
-        )
-
-        -- setup lsp_config here or import from part of neovim config that sets up LSP
-
-        require('remote-ssh').setup({
-        })
-    end
-},
-{
-    "theHamsta/nvim-dap-virtual-text", 
-    opts = {
-        enabled = true,
-        enabled_commands = true,
-        highlight_changed_variables = true,
-        highlight_new_as_changed = false,
-        show_stop_reason = true,
-        commented = false,
-        only_first_definition = true,
-        all_references = false,
-        clear_on_continue = false,
-        display_callback = function(variable, buf, stackframe, node, options)
-          if options.virt_text_pos == 'inline' then
-            return ' = ' .. variable.value:gsub("%s+", " ")
-          else
-            return variable.name .. ' = ' .. variable.value:gsub("%s+", " ")
-          end
-        end,
-        virt_text_pos = vim.fn.has 'nvim-0.10' == 1 and 'inline' or 'eol',
-
-        all_frames = false,
-        virt_lines = false,
-        virt_text_win_col = nil
-    }
-},
-{
-    "mfussenegger/nvim-dap"
-},
-{
-    "gennaro-tedesco/nvim-peekup"
-},
-{
  "windwp/nvim-ts-autotag",
  init =  function ()
      require('nvim-ts-autotag').setup(
@@ -83,7 +26,7 @@ require('lazy').setup({
  {
      "nanozuki/tabby.nvim",
      opts ={
-         -- preset = 'tab_only',
+         preset = 'tab_only',
      }
  },
 {
@@ -101,10 +44,6 @@ require('lazy').setup({
                 priority = 2003,
                 inline = true,
         }
-},
-{
-    "mrcjkb/haskell-tools.nvim",
-    lazy = false
 },
 {
   'kristijanhusak/vim-dadbod-ui',
@@ -143,23 +82,9 @@ require('lazy').setup({
 -- 	"micangl/cmp-vimtex"
 -- },
 {
-  "S1M0N38/love2d.nvim",
-  cmd = "LoveRun",
-  opts = { },
-  keys = {
-    { "<leader>vs", ft = "lua", desc = "LÖVE" },
-    { "<leader>vv", "<cmd>LoveRun<cr>", ft = "lua", desc = "Run LÖVE" },
-    { "<leader>vs", "<cmd>LoveStop<cr>", ft = "lua", desc = "Stop LÖVE" },
-  },
-},
-{
 	  "chentoast/marks.nvim",
 	  event = "VeryLazy",
 	  opts = {},
-},
-{
-	"milanglacier/yarepl.nvim",
-	config = true
 },
 {
   "NeogitOrg/neogit",
