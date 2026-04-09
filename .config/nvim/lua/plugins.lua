@@ -12,48 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
- {
-     "nanozuki/tabby.nvim",
-     opts ={
-         preset = 'tab_only',
-     }
- },
-{
-        'sontungexpt/better-diagnostic-virtual-text',
-        opts = {
-            ui = {
-                    wrap_line_after = true,
-                   left_kept_space = 3,
-                    right_kept_space = 3,
-                    arrow = "  ",
-                    up_arrow = "  ",
-                    down_arrow = "  ",
-                    above = false,
-                },
-                priority = 2003,
-                inline = true,
-        }
-},
-{
-  'kristijanhusak/vim-dadbod-ui',
-  dependencies = {
-    { 'tpope/vim-dadbod', lazy = true },
-    { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
-  },
-  cmd = {
-    'DBUI',
-    'DBUIToggle',
-    'DBUIAddConnection',
-    'DBUIFindBuffer',
-  },
-  init = function()
-    -- Your DBUI configuration
-    vim.g.db_ui_use_nerd_fonts = 1
-    vim.g.db_ui_execute_on_save = 0
-	vim.g.db_ui_show_database_icon = 1
-	vim.g.db_ui_auto_execute_table_helpers = 1
-  end,
-},
+ require("plugins.tabby"),require("plugins.dadboard"),
 {
 	'nvim-tree/nvim-tree.lua',
 	opts = {

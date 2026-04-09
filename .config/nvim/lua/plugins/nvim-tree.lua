@@ -1,0 +1,13 @@
+return {
+	'nvim-tree/nvim-tree.lua',
+	opts = {
+		view = {
+			float = {
+				enable = true
+			},
+		},
+        git = {
+            ignore = false
+        }
+	}
+}
