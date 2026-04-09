@@ -17,11 +17,7 @@ require('lazy').setup({
      require("plugins.nvim-tree"),
      require("plugins.neogit"),
      require("plugins.cursorline"),
-{
-    's1n7ax/nvim-terminal',
-    opts = {}
-},
-
+     require("plugins.terminal"),
     { 'rebelot/kanagawa.nvim' },
     { 'jghauser/mkdir.nvim' },
     { 'Pocco81/auto-save.nvim',opts = {} },
