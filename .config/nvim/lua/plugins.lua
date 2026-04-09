@@ -12,14 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
-     require("plugins.tabby"),
-     require("plugins.dadboard"),
-     require("plugins.nvim-tree"),
-     require("plugins.neogit"),
-     require("plugins.cursorline"),
-     require("plugins.terminal"),
-    { 'rebelot/kanagawa.nvim' },
-    { 'jghauser/mkdir.nvim' },
+    require("plugins.plugins"),
     { 'Pocco81/auto-save.nvim',opts = {} },
     { 'kylechui/nvim-surround',opts = {} },
     { 'nvim-lualine/lualine.nvim',
