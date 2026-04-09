@@ -12,17 +12,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
-{
- "windwp/nvim-ts-autotag",
- init =  function ()
-     require('nvim-ts-autotag').setup(
-         {
-             opts = {
-                enable_close_on_slash = true
-         }}
-     )
- end
-},
  {
      "nanozuki/tabby.nvim",
      opts ={
@@ -149,12 +138,11 @@ require('lazy').setup({
             rust = "cargo run"
 	    }
     },
+    behavior = {
+        default = "terminal"
+    },
     ui = {
 	    startinsert = true,
-	    float = {
-		    border = "solid",
-		    blend = 1
-	    }
     } }},
     { 'sbdchd/neoformat' },
     { 'hrsh7th/cmp-nvim-lsp' },
