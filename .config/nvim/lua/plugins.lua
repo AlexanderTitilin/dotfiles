@@ -12,60 +12,16 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
- require("plugins.tabby"),require("plugins.dadboard"),
-{
-	'nvim-tree/nvim-tree.lua',
-	opts = {
-		view = {
-			float = {
-				enable = true
-			},
-		},
-        git = {
-            ignore = false
-        }
-	}
-},
--- {
--- 	"micangl/cmp-vimtex"
--- },
-{
-	  "chentoast/marks.nvim",
-	  event = "VeryLazy",
-	  opts = {},
-},
-{
-  "NeogitOrg/neogit",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "sindrets/diffview.nvim",
-    "nvim-telescope/telescope.nvim",
-  },
-  config = true
-},
-{
-	'yamatsum/nvim-cursorline',
-	opts = {
-	cursorline = {
-    		enable = false,
-  		},
-  	cursorword = {
-    		enable = true,
-    		min_length = 3,
-    hl = { underline = true },
-  }
-	}
-},
+     require("plugins.tabby"),
+     require("plugins.dadboard"),
+     require("plugins.nvim-tree"),
+     require("plugins.neogit"),
+     require("plugins.cursorline"),
 {
     's1n7ax/nvim-terminal',
     opts = {}
 },
 
-    { 'norcalli/nvim-colorizer.lua',
-    	config = function()
-	    require("colorizer").setup()
-    	end
-   },
     { 'rebelot/kanagawa.nvim' },
     { 'jghauser/mkdir.nvim' },
     { 'Pocco81/auto-save.nvim',opts = {} },
