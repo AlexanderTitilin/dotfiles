@@ -12,4 +12,12 @@ return {
     { import = "plugins.comment" },
     { import = "plugins.lualine" },
     { import = "plugins.vimtex" },
+    { import = "plugins.autoclose" },
+    { import = "plugins.telescope" },
+    { import = "plugins.jaq" },
+    { import = "plugins.neoformat" },
+    { import = "plugins.cmp-nvim" },
+    { import = "plugins.lsp-config" },
+    { import = "plugins.treesitter" },
+    { import = "plugins.ultisnips" },
 }
