@@ -1,10 +1,16 @@
-return  { 'nvim-treesitter/nvim-treesitter',
-    	build = ":TSUpdate",
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			highlight = {
-				enable = true
-			}
-	})
-	end
-     }
+return  {
+    {
+    "romus204/tree-sitter-manager.nvim",
+    dependencies = {},
+    config = function()
+        require("tree-sitter-manager").setup({
+        })
+    end
+},
+{
+  'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  build = ':TSUpdate'
+}
+}
+

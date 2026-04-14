@@ -1,23 +1,11 @@
-return {
-    { import = "plugins.tabby" },
-    { import = "plugins.dadboard" },
-    { import = "plugins.nvim-tree" },
-    { import = "plugins.neogit" },
-    { import = "plugins.cursorline" },
-    { import = "plugins.terminal" },
-    { import = "plugins.colorscheme" },
-    { import = "plugins.mkdir" },
-    { import = "plugins.autosave" },
-    { import = "plugins.surround" },
-    { import = "plugins.comment" },
-    { import = "plugins.lualine" },
-    { import = "plugins.vimtex" },
-    { import = "plugins.autoclose" },
-    { import = "plugins.telescope" },
-    { import = "plugins.jaq" },
-    { import = "plugins.neoformat" },
-    { import = "plugins.cmp-nvim" },
-    { import = "plugins.lsp-config" },
-    { import = "plugins.treesitter" },
-    { import = "plugins.ultisnips" },
-}
+
+local files = vim.fs.dir(
+    vim.fn.expand("~/.config/nvim/lua/plugins"))
+local plugins = {}
+for file in files do
+    if file ~= "init.lua" and file:match("%.lua$") then
+        local plugin_name = string.format("plugins.%s",string.sub(file,1,-5))
+        table.insert(plugins,{import=plugin_name})
+    end
+end
+return plugins
